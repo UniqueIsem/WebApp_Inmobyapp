@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Titulo</label>
+        <input type="text" class="form-control" id="title" required [(ngModel)]="tienda.title" name="title" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descripcion</label>
+        <input class="form-control" id="description" required [(ngModel)]="tienda.description" name="description" />
+      </div>
+      <div class="form-group">
+        <label for="domicilio">Domicilio</label>
+        <input class="form-control" id="domicilio" required [(ngModel)]="tienda.domicilio" name="domicilio" />
+      </div>
+      <div class="form-group">
+        <label for="pisos">Pisos</label>
+        <input class="form-control" id="pisos" required [(ngModel)]="tienda.pisos" name="pisos" />
+      </div>
+      <div class="form-group">
+        <label for="cuartos">Cuartos</label>
+        <input class="form-control" id="cuartos" required [(ngModel)]="tienda.cuartos" name="cuartos" />
+      </div>
+      <div class="form-group">
+        <label for="banios">Banios</label>
+        <input class="form-control" id="banios" required [(ngModel)]="tienda.banios" name="baños" />
+      </div>
+      <div class="btn-container">
+        <button (click)="saveTienda()" class="btn btn-success btn-save">Guardar propiedad</button>
+      </div>
+    </div>
+
+    <div *ngIf="submitted" class="msgSuccess">
+      <h4>Se subio correctamente</h4>
+      <button class="btn btn-success" (click)="newTienda()">Agregar</button>
+    </div>
+  </div>
+
+  <div class="cotizacion-container">
+
+
+    <div class="precio-container">
+      <h4>El precio de tu propiedad seria:</h4>
+      <h2>$$$$$$$$$$$$</h2>
+    </div>
+
+    <div class="agent-container">
+      <p>Contacta a un vendedor</p>
+      <a href="mailto:agentedeventas@gmail.com">agentedeventas@gmail.com</a>
+    </div>
+  </div>
+</div>

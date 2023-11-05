@@ -1,0 +1,60 @@
+.container {
+  background-color: #45484b;
+  display: flex;
+  margin: auto;
+  color: #ffff;
+}
+
+.submit-form {
+  padding: 20px;
+  margin-top: 20px;
+  margin: auto;
+}
+
+.form-group {
+  margin: 10px 20px;
+  color: #ffff;
+}
+
+.btn-container {
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-save {
+  margin: 10px;
+}
+
+.msgSuccess {
+  align-items: center;
+  justify-content: center;
+}
+
+/*parte derecha*/
+.cotizacion-container {
+  background-color: #b9b9b9;
+  position: relative;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.precio-container {
+  color: #000000;
+  text-align: center;
+  padding: 10px;
+}
+
+.agent-container {
+  background-color: #45484b;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  width: 80%;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+}
+
+
+

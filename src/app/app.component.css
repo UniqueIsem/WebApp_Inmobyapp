@@ -1,0 +1,35 @@
+/*Estilos para la barra de menu*/
+.navbar {
+  background-color: #36393b;
+  height: 100px;
+}
+
+/* Estilos para el título a la izquierda */
+.navbar-brand {
+  font-size: 24px;
+  color: #eee6ab;
+  font-weight: bold;
+}
+
+/* Estilos para los elementos de la lista en el centro */
+.navbar-nav {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item {
+  margin-right: 80px; /* Espacio entre elementos de la lista */
+}
+
+.nav-link {
+  color: #eee6ab;
+}
+
+/* Estilos para los botones de Sign In y Log In */
+.btn {
+  border-color: #ffff;
+  background-color: #45484b;
+  margin-left: 10px; /* Espacio entre botones */
+}

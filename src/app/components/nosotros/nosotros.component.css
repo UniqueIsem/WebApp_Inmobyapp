@@ -1,0 +1,24 @@
+.container {
+    background-color: #45484b;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: auto;
+}
+
+.half {
+    flex: 1; 
+    padding: 10px; 
+    box-sizing: border-box;
+    text-align: center; 
+    justify-content: space-between;
+}
+.half h2 {
+    margin-bottom: 30px;
+}
+
+.half img {
+    max-width: 100%; 
+    height: auto;
+    margin-right: 10px;
+}

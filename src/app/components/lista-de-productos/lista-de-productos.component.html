@@ -1,0 +1,32 @@
+<div class="list-row">
+    <div class="col-md-6">
+      <h4>Tipo de propiedad</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let tienda of tiendas; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveTutorial(tienda, i)"
+        >
+          {{ tienda.title }}
+        </li>
+      </ul>
+  
+      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+       Eliminar todo
+      </button>
+    </div>
+    <div class="col-md-6">
+      <div *ngIf="currentTienda">
+        <app-datalles-de-producto
+          (refreshList)="refreshList()"
+          [tienda]="currentTienda"
+        ></app-datalles-de-producto>
+      </div>
+  
+      <div *ngIf="!currentTienda">
+        <br />
+        <p>Favor de seleccionar un producto</p>
+      </div>
+    </div>
+  </div>
