@@ -1,13 +1,25 @@
+/*Estilo para el contenedor*/
+.container {
+  padding: 0;
+  max-width: 100%;
+  background-color: #5e9188;
+}
+
+a {
+  color: #ffffff;
+}
+
 /*Estilos para la barra de menu*/
 .navbar {
-  background-color: #36393b;
-  height: 100px;
+  background-color: #232226;
+  height: 90px;
+  margin-bottom: 20px;
 }
 
 /* Estilos para el título a la izquierda */
 .navbar-brand {
-  font-size: 24px;
-  color: #eee6ab;
+  font-size: 20px;
+  color: #ffffff;
   font-weight: bold;
 }
 
@@ -20,16 +32,44 @@
 }
 
 .nav-item {
-  margin-right: 80px; /* Espacio entre elementos de la lista */
+  margin-right: 50px; /* Espacio entre elementos de la lista */
 }
 
 .nav-link {
-  color: #eee6ab;
+  color: #ffffff;
 }
 
 /* Estilos para los botones de Sign In y Log In */
 .btn {
-  border-color: #ffff;
-  background-color: #45484b;
+  border-color: #ffffff;
+  background-color: #253342;
   margin-left: 10px; /* Espacio entre botones */
+}
+
+footer {
+  background-color: #232226;
+  padding: 16px;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-info {
+  color: #ffffff;
+}
+
+.footer-vertical-line {
+  border-left: 1px solid #ffffff;
+  height: 60px;
+  margin: 0 40px;
+}
+
+.icon-facebook,
+.icon-instagram {
+  height: 1.5rem;
+  width: 1.5rem;
+  fill: white;
+  margin-top: 0.62rem;
+  margin-right: 1.8rem;
 }

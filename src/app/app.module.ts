@@ -15,13 +15,17 @@ import { CrearProductoComponent } from './components/crear-producto/crear-produc
 import { ListaDeProductosComponent } from './components/lista-de-productos/lista-de-productos.component';
 import { DatallesDeProductoComponent } from './components/datalles-de-producto/datalles-de-producto.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component';
 @NgModule({
   declarations: [
     AppComponent,
     DatallesDeProductoComponent, 
     ListaDeProductosComponent,
     CrearProductoComponent,
-    NosotrosComponent
+    NosotrosComponent,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

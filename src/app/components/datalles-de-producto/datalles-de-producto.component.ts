@@ -38,7 +38,7 @@ export class DatallesDeProductoComponent implements OnInit {
       this.tiendaService.update(this.currentTienda.key, { published: status })
       .then(() => {
         this.currentTienda.published = status;
-        this.message = 'The status was updated successfully!';
+        this.message = 'La propiedad fue publicada con exito';
       })
       .catch(err => console.log(err));
     }
@@ -52,7 +52,7 @@ export class DatallesDeProductoComponent implements OnInit {
 
     if (this.currentTienda.key) {
       this.tiendaService.update(this.currentTienda.key, data)
-        .then(() => this.message = 'The tutorial was updated successfully!')
+        .then(() => this.message = 'La propiedad fue actualizada con exito')
         .catch(err => console.log(err));
     }
   }
@@ -62,7 +62,7 @@ export class DatallesDeProductoComponent implements OnInit {
       this.tiendaService.delete(this.currentTienda.key)
         .then(() => {
           this.refreshList.emit();
-          this.message = 'The tutorial was updated successfully!';
+          this.message = 'La propiedad fue eliminada con exito';
         })
         .catch(err => console.log(err));
     }

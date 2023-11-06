@@ -1,8 +1,13 @@
 .list-row {
-  background-color: #45484b;
-  margin: 10px;
+  background-color: #253342;
+  margin: 30px;
   padding: 20px;
   display: flex;
-  color: azure;
+  color: #ffffff;
 }
+
+.list-group {
+  color: black;
+}
+
 

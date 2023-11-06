@@ -1,0 +1,12 @@
+.container {
+    background-color: #253342;
+    color: #ffffff;
+    padding: 50px;
+    max-width: 50%;
+    border-radius: 30px;
+}
+
+.title {
+    border-bottom: 2px #ffffff;
+    margin: 20px;
+}

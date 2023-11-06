@@ -14,10 +14,10 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-16-firebase-crud'`, () => {
+  it(`should have as title 'Inmobyapp'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-16-firebase-crud');
+    expect(app.title).toEqual('Inmobyapp');
   });
 
   it('should render title', () => {

@@ -1,17 +1,17 @@
 .container {
-    background-color: #45484b;
+    background-color: #253342;
     justify-content: center;
     align-items: center;
     display: flex;
-    margin: auto;
+    max-width: 95%;
+    max-height: 100%;
 }
 
 .half {
     flex: 1; 
     padding: 10px; 
-    box-sizing: border-box;
     text-align: center; 
-    justify-content: space-between;
+    color: #ffffff;
 }
 .half h2 {
     margin-bottom: 30px;

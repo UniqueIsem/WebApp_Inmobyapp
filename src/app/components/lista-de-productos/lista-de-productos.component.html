@@ -17,7 +17,7 @@
       </button>
     </div>
     <div class="col-md-6">
-      <div *ngIf="currentTienda">
+      <div class="list" *ngIf="currentTienda">
         <app-datalles-de-producto
           (refreshList)="refreshList()"
           [tienda]="currentTienda"
@@ -26,7 +26,7 @@
   
       <div *ngIf="!currentTienda">
         <br />
-        <p>Favor de seleccionar un producto</p>
+        <p>Seleccione una propiedad.</p>
       </div>
     </div>
   </div>
