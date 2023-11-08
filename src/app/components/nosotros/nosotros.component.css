@@ -22,3 +22,7 @@
     height: auto;
     margin-right: 10px;
 }
+
+.half p {
+    font-size: 25px;
+}
