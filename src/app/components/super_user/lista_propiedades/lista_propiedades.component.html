@@ -12,16 +12,16 @@
         </li>
       </ul>
   
-      <button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
+      <!--<button class="m-3 btn btn-sm btn-danger" (click)="removeAllTutorials()">
        Eliminar todo
-      </button>
+      </button>-->
     </div>
     <div class="col-md-6">
       <div class="list" *ngIf="currentTienda">
-        <app-datalles-de-producto
+        <app-info-propiedades
           (refreshList)="refreshList()"
           [tienda]="currentTienda"
-        ></app-datalles-de-producto>
+        ></app-info-propiedades>
       </div>
   
       <div *ngIf="!currentTienda">

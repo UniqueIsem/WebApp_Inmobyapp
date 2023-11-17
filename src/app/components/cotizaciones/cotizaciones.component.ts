@@ -5,10 +5,10 @@ import { TiendaService } from 'src/app/services/Tienda.service';
 
 @Component({
   selector: 'app-crear-producto',
-  templateUrl: './crear-producto.component.html',
-  styleUrls: ['./crear-producto.component.css']
+  templateUrl: './cotizaciones.component.html',
+  styleUrls: ['./cotizaciones.component.css']
 })
-export class CrearProductoComponent {
+export class CotizacionesComponent {
   tienda: Tienda = new Tienda();
   submitted = false;
 

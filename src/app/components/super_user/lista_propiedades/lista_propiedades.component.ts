@@ -4,11 +4,11 @@ import { Tienda } from 'src/app/models/Tienda.model';
 import { map } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-lista-de-productos',
-  templateUrl: './lista-de-productos.component.html',
-  styleUrls: ['./lista-de-productos.component.css']
+  selector: 'app-lista-propiedades',
+  templateUrl: './lista_propiedades.component.html',
+  styleUrls: ['./lista_propiedades.component.css']
 })
-export class ListaDeProductosComponent {
+export class ListaPropiedadesComponent {
   tiendas?: Tienda[];
   currentTienda?: Tienda;
   currentIndex = -1;

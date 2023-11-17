@@ -3,11 +3,11 @@ import { Tienda } from 'src/app/models/Tienda.model';
 import { TiendaService } from 'src/app/services/Tienda.service';
 
 @Component({
-  selector: 'app-datalles-de-producto',
-  templateUrl: './datalles-de-producto.component.html',
-  styleUrls: ['./datalles-de-producto.component.css']
+  selector: 'app-info-propiedades',
+  templateUrl: './info_propiedades.component.html',
+  styleUrls: ['./info_propiedades.component.css']
 })
-export class DatallesDeProductoComponent implements OnInit {
+export class InfoPropiedadesComponent implements OnInit {
   @Input() tienda?: Tienda;
   @Output() refreshList: EventEmitter<any> = new EventEmitter();
   currentTienda: Tienda = {

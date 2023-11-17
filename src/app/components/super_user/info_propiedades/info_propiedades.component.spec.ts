@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DatallesDeProductoComponent } from './datalles-de-producto.component';
+import { InfoPropiedadesComponent } from './info_propiedades.component';
 
 describe('DatallesDeProductoComponent', () => {
-  let component: DatallesDeProductoComponent;
-  let fixture: ComponentFixture<DatallesDeProductoComponent>;
+  let component: InfoPropiedadesComponent;
+  let fixture: ComponentFixture<InfoPropiedadesComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DatallesDeProductoComponent]
+      declarations: [InfoPropiedadesComponent]
     });
-    fixture = TestBed.createComponent(DatallesDeProductoComponent);
+    fixture = TestBed.createComponent(InfoPropiedadesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
