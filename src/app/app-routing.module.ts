@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'cotizaciones', component: CotizacionesComponent },
   { path: 'home', component: NosotrosComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signin', component: SigninComponent}, 
+  { path: 'signup', component: SigninComponent}, 
   { path: 'propiedades', component: PropiedadesComponent}
 ];
 

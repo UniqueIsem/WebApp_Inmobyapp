@@ -4,6 +4,12 @@
     padding: 50px;
     max-width: 50%;
     border-radius: 30px;
+    margin-top: 20px;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
 }
 
 .title {
