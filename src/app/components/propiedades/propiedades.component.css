@@ -1,0 +1,98 @@
+.container {
+    background-color: #253342;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    margin-top: 20px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.btnAnterior {
+    font-family: serif;
+    font-size: 1.87rem;
+    float: left;
+    width: 25%;
+    height: 100%;
+    opacity: 0;
+    border: 0px;
+    border-start-start-radius: 10px;
+    border-end-start-radius: 10px;
+    color: white;
+    transition: 0.5s ease;
+}
+
+.btnAnterior:hover {
+    opacity: 100%;
+    background: linear-gradient(-90deg, transparent, black);
+    cursor: pointer;
+}
+
+.btnSiguiente {
+    font-family: serif;
+    font-size: 1.87rem;
+    float: right;
+    width: 25%;
+    height: 100%;
+    opacity: 0;
+    border: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: white;
+    transition: 0.5s ease;
+}
+
+.btnSiguiente:hover {
+    opacity: 100%;
+    background: linear-gradient(90deg, transparent, black);
+    cursor: pointer;
+}
+
+.aside_propiedad {
+    background-image: url("https://source.unsplash.com/random/800x400?architecture");
+    background-size: cover;
+    box-shadow: 0 0px 5px rgb(255, 255, 255);
+    margin: 10px;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    max-height: 300px;
+    height: 100vh;
+}
+
+.article_propiedad {
+    padding: 1.25rem;
+    background-color: #253342;
+    grid-area: article;
+}
+
+.ubicacion_propiedad {
+    margin-top: 10px;
+}
+
+.dimensiones_propiedad,
+.caracteristicas_propiedad {
+    margin: 10px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.dimensiones {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+}
+
+.elementos_propiedad {
+    font-size: 1rem;
+    margin-right: 20px;
+    margin-bottom: 3px;
+    line-height: 20px;
+    padding: 2px 8px 0;
+    border-radius: 23px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    border: 1px solid rgb(255, 255, 255);
+}

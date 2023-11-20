@@ -6,14 +6,16 @@ import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.co
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { PropiedadesComponent } from './components/propiedades/propiedades.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'propiedades', component: ListaPropiedadesComponent },
+  { path: 'super', component: ListaPropiedadesComponent },
   { path: 'cotizaciones', component: CotizacionesComponent },
   { path: 'home', component: NosotrosComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'signin', component: SigninComponent}
+  { path: 'signin', component: SigninComponent}, 
+  { path: 'propiedades', component: PropiedadesComponent}
 ];
 
 @NgModule({

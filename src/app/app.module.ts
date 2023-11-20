@@ -18,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
+import { PropiedadesComponent } from './components/propiedades/propiedades.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.co
     NosotrosComponent,
     LoginComponent,
     SigninComponent,
-    CarruselComponent
+    CarruselComponent,
+    PropiedadesComponent
   ],
   imports: [
     BrowserModule,

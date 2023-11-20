@@ -1,5 +1,6 @@
 .container {
   background-color: #253342;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 2);
   display: flex;
   margin: auto;
   color: #ffff;

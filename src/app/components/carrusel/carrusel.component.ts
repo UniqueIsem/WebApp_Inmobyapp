@@ -22,6 +22,6 @@ export class CarruselComponent implements OnInit {
   cambiarImagen() {
     setInterval(() => {
       this.indiceActual = (this.indiceActual + 1) % this.imagenes.length;
-    }, 5000); // Cambia de imagen cada 3 segundos (ajusta según tus necesidades)
+    }, 5000); // Cambia de imagen cada 5 segundos
   }
 }
