@@ -7,6 +7,7 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { LoginComponent } from './components/login/login.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { PropiedadesComponent } from './components/propiedades/propiedades.component';
+import { SignupSuperComponent } from './components/super_user/signup-super/signup-super.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'home', component: NosotrosComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SigninComponent}, 
-  { path: 'propiedades', component: PropiedadesComponent}
+  { path: 'propiedades', component: PropiedadesComponent},
+  { path: 'signup_super', component: SignupSuperComponent}
 ];
 
 @NgModule({
