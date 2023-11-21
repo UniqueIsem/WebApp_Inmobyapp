@@ -1,23 +1,41 @@
 <div class="container">
     <div class="text-center">
-        <form class="submit-form" action="submit">
-            <img src="https://icon-library.com/images/sign-up-icon-png/sign-up-icon-png-21.jpg" alt="login_icon" class="img">
-            <h1 class="title">Registrarse</h1>
-            <div class="form-group">
-                <label for="newUser">Ingrese un nuevo usuario</label>
-                <input type="text" id="newUser" name="newUser" placeholder="Crear usuario" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="newPassword">Ingrese una nueva contraseña</label>
-                <input type="password" id="newPassword" name="newPassword" placeholder="Nueva contraseña" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="confirmNewPassword">Confirme su nueva contraseña</label>
-                <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="Confirmar contraseña" class="form-control">
-            </div>
-            <div class="btnSignin">
-                <button type="submit" class="btn btn-primary">Registrarse</button>
-            </div>
+      <div *ngIf="!submitted">
+        <form class="submit-form" (ngSubmit)="onSubmit($event)">
+          <img src="https://icon-library.com/images/sign-up-icon-png/sign-up-icon-png-21.jpg" alt="login_icon" class="img">
+          <h1 class="title">Registrarse</h1>
+          <div class="form-group">
+            <label for="usuario">Ingrese un nuevo usuario</label>
+            <input type="text" id="usuario" required [(ngModel)]="User.usuario" name="usuario" placeholder="Crear usuario"
+              class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="newPassword">Ingrese una nueva contraseña</label>
+            <input type="password" id="newPassword" required [(ngModel)]="User.contrasena" name="newPassword"
+              placeholder="Nueva contraseña" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="confirmNewPassword">Confirme su nueva contraseña</label>
+            <input type="password" id="confirmNewPassword" required [(ngModel)]="User.confirmNewPassword" name="confirmNewPassword"
+              placeholder="Confirmar contraseña" class="form-control">
+          </div>
+          <div *ngIf="!passwordsMatch" class="error-message">
+            Las contraseñas no coinciden. Por favor, inténtalo de nuevo.
+          </div>
+  
+          <!-- Mensaje si el usuario ya existe -->
+          <div *ngIf="userExists" class="error-message">
+            El usuario ya existe. Por favor, elige otro nombre de usuario.
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Registrarse</button>
         </form>
+      </div>
+  
+      <div *ngIf="submitted" class="msgSuccess">
+        <h4>Te has Registrado con Éxito</h4>
+        <button class="btn btn-success" (click)="newUsuario()">Nuevo registro</button>
+      </div>
     </div>
-</div>
+  </div>
+  
