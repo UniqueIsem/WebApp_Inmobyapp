@@ -11,10 +11,10 @@ import { map } from 'rxjs/operators';
 export class UsuarioService {
   private dbPath = '/Usuarios';
   usuariosRef: AngularFireList<usuario>;
+  afAuth: any;
 
   constructor(
     private db: AngularFireDatabase,
-    private afAuth: AngularFireAuth // Inyectar AngularFireAuth aquí
   ) {
     this.usuariosRef = db.list(this.dbPath);
   }
@@ -38,28 +38,21 @@ export class UsuarioService {
   deleteAll(): Promise<void> {
     return this.usuariosRef.remove();
   }
-
   getUserByUsername(username: string): Observable<any[]> {
     return this.db.list('/Usuarios', ref => ref.orderByChild('usuario').equalTo(username)).valueChanges();
   }
 
   getToken(): Observable<any> {
     return new Observable(observer => {
-      this.afAuth.idToken.subscribe(token => {
+      this.afAuth.idToken.subscribe((token: any) => {
         observer.next(token);
         observer.complete();
-      }, error => {
+      }, (error: any) => {
         observer.error(error);
         observer.complete();
       });
     });
   }
 
-  getNombreUsuario(): Observable<string> {
-    return this.afAuth.authState.pipe(
-      map((user) => {
-        return user ? user.displayName || '' : '';
-      })
-    );
-  }
+
 }
