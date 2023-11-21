@@ -20,6 +20,7 @@ import { CarruselComponent } from './components/carrusel/carrusel.component';
 import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.component';
 import { PropiedadesComponent } from './components/propiedades/propiedades.component';
 import { SignupSuperComponent } from './components/super_user/signup-super/signup-super.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { SignupSuperComponent } from './components/super_user/signup-super/signu
     SigninComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
