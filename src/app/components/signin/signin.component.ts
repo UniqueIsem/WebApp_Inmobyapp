@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { usuario } from 'src/app/models/Tienda.model';
 import { UsuarioService } from 'src/app/services/Usuario.service';
 import { Observable } from 'rxjs'; // Importar Observable desde 'rxjs'
+import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -13,8 +14,15 @@ export class SigninComponent {
   submitted = false;
   passwordsMatch = true;
   userExists = false;
+  userEmpty = false;
 
   constructor(private usuarioService: UsuarioService) { }
+
+  signupForm = new FormGroup({
+    usuario: new FormControl('', Validators.required),
+    newPassword: new FormControl('', Validators.required),
+    confirmNewPassword: new FormControl('', Validators.required)
+  })
 
   saveUsuario(): void {
     // Verificar si las contraseñas coinciden y si el usuario ya existe
@@ -24,6 +32,7 @@ export class SigninComponent {
       const username = this.User.usuario; // Almacenar el nombre de usuario
   
       if (username) {
+        this.userEmpty = false;
         this.usuarioService.getUserByUsername(username).subscribe((data: any[]) => {
           if (data && data.length > 0) {
             // El usuario ya existe
@@ -40,9 +49,11 @@ export class SigninComponent {
       } else {
         // Manejar el caso cuando el nombre de usuario es indefinido
         console.error('El nombre de usuario no puede ser indefinido');
+        this.userEmpty = true;
       }
     } else {
       // Las contraseñas no coinciden
+      console.error("La contraseña no coincide")
       this.passwordsMatch = false;
     }
   }

@@ -1,24 +1,25 @@
 <div class="container">
     <div class="text-center">
       <div *ngIf="!submitted">
-        <form class="submit-form" (ngSubmit)="onSubmit($event)">
+        <form [formGroup]="signupForm" class="submit-form" (ngSubmit)="onSubmit($event)">
           <img src="https://icon-library.com/images/sign-up-icon-png/sign-up-icon-png-21.jpg" alt="login_icon" class="img">
           <h1 class="title">Registrarse</h1>
-          <div class="form-group">
+          <div class="form-group" >
             <label for="usuario">Ingrese un nuevo usuario</label>
-            <input type="text" id="usuario" required [(ngModel)]="User.usuario" name="usuario" placeholder="Crear usuario"
-              class="form-control">
+            <input type="text" id="usuario" [(ngModel)]="User.usuario" formControlName="usuario" placeholder="Crear usuario"
+              class="form-control" required>
           </div>
           <div class="form-group">
             <label for="newPassword">Ingrese una nueva contraseña</label>
-            <input type="password" id="newPassword" required [(ngModel)]="User.contrasena" name="newPassword"
-              placeholder="Nueva contraseña" class="form-control">
+            <input type="password" id="newPassword" [(ngModel)]="User.contrasena" formControlName="newPassword"
+              placeholder="Nueva contraseña" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="confirmNewPassword">Confirme su nueva contraseña</label>
-            <input type="password" id="confirmNewPassword" required [(ngModel)]="User.confirmNewPassword" name="confirmNewPassword"
-              placeholder="Confirmar contraseña" class="form-control">
+            <input type="password" id="confirmNewPassword" [(ngModel)]="User.confirmNewPassword" formControlName="confirmNewPassword"
+              placeholder="Confirmar contraseña" class="form-control" required>
           </div>
+          <!--Mensaje si las contraseñas no coinciden-->
           <div *ngIf="!passwordsMatch" class="error-message">
             Las contraseñas no coinciden. Por favor, inténtalo de nuevo.
           </div>
@@ -27,7 +28,12 @@
           <div *ngIf="userExists" class="error-message">
             El usuario ya existe. Por favor, elige otro nombre de usuario.
           </div>
-  
+
+          <!--Mensaje si el usario está vacio-->
+          <div *ngIf="userEmpty" class="error-message">
+            Debe ingresar un nombre de usuario.
+          </div>
+
           <button type="submit" class="btn btn-primary">Registrarse</button>
         </form>
       </div>
