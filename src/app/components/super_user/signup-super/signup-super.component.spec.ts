@@ -7,10 +7,10 @@ describe('SignupSuperComponent', () => {
   let fixture: ComponentFixture<SignupSuperComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [SignupSuperComponent]
+    /*await*/ TestBed.configureTestingModule({
+      /*imports*/declarations: [SignupSuperComponent]
     })
-    .compileComponents();
+    /*.compileComponents();*/
     
     fixture = TestBed.createComponent(SignupSuperComponent);
     component = fixture.componentInstance;

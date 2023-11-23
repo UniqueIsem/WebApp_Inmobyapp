@@ -33,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SigninComponent,
     CarruselComponent,
     PropiedadesComponent,
-    SigninComponent
+    SigninComponent,
+    SignupSuperComponent
   ],
   imports: [
     ReactiveFormsModule,

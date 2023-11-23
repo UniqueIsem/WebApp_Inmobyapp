@@ -1,15 +1,15 @@
 <div class="container">
     <div class="text-center">
-        <form class="submit-form" (ngSubmit)="loginUser()" #loginForm="ngForm">
+        <form [formGroup]="loginForm" class="submit-form" (ngSubmit)="loginUser()">
             <img src="https://icon-library.com/images/account-icon-png/account-icon-png-2.jpg" alt="login_icon" class="img">
             <h1 class="title">Iniciar Sesión</h1>
             <div class="form-group">
                 <label for="username">Ingrese su Usuario</label>
-                <input type="text" id="username" name="username" placeholder="Usuario" class="form-control" required [(ngModel)]="username">
+                <input type="text" id="username" formControlName="username" placeholder="Usuario" class="form-control" required [(ngModel)]="username">
             </div>
             <div class="form-group">
                 <label for="password">Ingrese su contraseña</label>
-                <input type="password" id="password" name="password" placeholder="Password" class="form-control" required [(ngModel)]="password">
+                <input type="password" id="password" formControlName="password" placeholder="Password" class="form-control" required [(ngModel)]="password">
             </div>
             <div class="btnLogin">
                 <button type="submit" class="btn btn-primary">Iniciar Sesión</button>

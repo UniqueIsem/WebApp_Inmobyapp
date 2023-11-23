@@ -12,6 +12,7 @@ export class UsuarioService {
   private dbPath = '/Usuarios';
   usuariosRef: AngularFireList<usuario>;
   afAuth: any;
+  usuarioGlobal: string ="";
 
   constructor(
     private db: AngularFireDatabase,
@@ -52,6 +53,18 @@ export class UsuarioService {
         observer.complete();
       });
     });
+  }
+
+  setUsuarioGlobal(data: string): void {
+    this.usuarioGlobal = data;
+  }
+
+  getUsurioGlobal(): string{
+    return this.usuarioGlobal;
+  }
+
+  clearUsuarioGlobal(): string{
+    return this.usuarioGlobal= " ";
   }
 
 

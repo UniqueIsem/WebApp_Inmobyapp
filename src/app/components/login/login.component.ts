@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/Usuario.service';
 
@@ -15,6 +16,11 @@ export class LoginComponent {
 
   constructor(private usuarioService: UsuarioService, private router: Router) { }
 
+  loginForm = new FormGroup({
+    username: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
+  })
+
   loginUser(): void {
     this.errorMessage = ' ';
     this.usuarioService.getUserByUsername(this.username).subscribe((data: any[]) => {
@@ -22,6 +28,7 @@ export class LoginComponent {
         // Inicio de sesión exitoso, redireccionar a una página de bienvenida o dashboard
         // También puedes almacenar la información del usuario en el servicio o en LocalStorage para mostrarla después
         localStorage.setItem('currentUser', JSON.stringify(data[0])); // Almacenar en LocalStorage
+        this.usuarioService.setUsuarioGlobal(this.username);
         this.router.navigate(['/home']); // Redireccionar a una página de bienvenida
       } else {
         // Nombre de usuario o contraseña incorrectos, mostrar mensaje de error o manejarlo como desees
