@@ -4,6 +4,7 @@ import { usuario } from '../models/Tienda.model';
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { map } from 'rxjs/operators';
+import { EventService } from './event.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,11 @@ export class UsuarioService {
   usuariosRef: AngularFireList<usuario>;
   afAuth: any;
   usuarioGlobal: string ="";
+  login: boolean = false
 
   constructor(
     private db: AngularFireDatabase,
+    private eventService: EventService
   ) {
     this.usuariosRef = db.list(this.dbPath);
   }
@@ -67,5 +70,14 @@ export class UsuarioService {
     return this.usuarioGlobal= " ";
   }
 
+  loginConfirmation(login: boolean) {
+    if (login === true){
+      this.eventService.emitLoginChanged(login);
+      return true;
+    } else {
+      console.log("LOGIN FALLO...");
+      return false;
+    }
+  }
 
 }

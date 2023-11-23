@@ -27,3 +27,17 @@
 .half p {
     font-size: 25px;
 }
+
+.logo img {
+    width: 150px;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        display: block;
+    }
+
+    .half .aside {
+        display: none;
+    }
+}

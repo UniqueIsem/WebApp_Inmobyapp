@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/Usuario.service';
 
 @Component({
@@ -9,7 +9,6 @@ import { UsuarioService } from 'src/app/services/Usuario.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
   username: string = '';
   password: string = '';
   errorMessage: string = '';
@@ -29,9 +28,12 @@ export class LoginComponent {
         // También puedes almacenar la información del usuario en el servicio o en LocalStorage para mostrarla después
         localStorage.setItem('currentUser', JSON.stringify(data[0])); // Almacenar en LocalStorage
         this.usuarioService.setUsuarioGlobal(this.username);
-        this.router.navigate(['/home']); // Redireccionar a una página de bienvenida
+        this.usuarioService.loginConfirmation(true);
+        const naviationExtras: NavigationExtras = { state: {reload: true} };
+        this.router.navigate(['/home'], naviationExtras); // Redireccionar a una página de bienvenida
       } else {
         // Nombre de usuario o contraseña incorrectos, mostrar mensaje de error o manejarlo como desees
+        this.usuarioService.loginConfirmation(false);
         this.errorMessage = 'Usuario o contraseña incorrectos';
       }
     });

@@ -21,6 +21,7 @@ import { CotizacionesComponent } from './components/cotizaciones/cotizaciones.co
 import { PropiedadesComponent } from './components/propiedades/propiedades.component';
 import { SignupSuperComponent } from './components/super_user/signup-super/signup-super.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UsuarioService } from './services/Usuario.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideDatabase(() => getDatabase())
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

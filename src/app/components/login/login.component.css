@@ -15,3 +15,8 @@
 .title {
     margin: 10px;
 }
+
+.error-message {
+    margin: 10px;
+    color: red;
+}

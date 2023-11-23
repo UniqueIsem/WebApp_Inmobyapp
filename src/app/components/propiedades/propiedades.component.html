@@ -1,7 +1,7 @@
 <div class="container">
         <aside class="aside_propiedad" id="propiedad_aside">
-            <button class="btnAnterior" onclick="proyector('casa1','anterior')">&lt</button>
-            <button class="btnSiguiente" onclick="proyector('casa1','siguiente')">&gt</button>
+            <button class="btnAnterior" onclick="proyector('casa1','anterior')"><</button>
+            <button class="btnSiguiente" onclick="proyector('casa1','siguiente')">></button>
         </aside>
         <article class="article_propiedad">
             <div class="contenedor_propiedad">
@@ -61,4 +61,137 @@
                 </div>
             </div>
         </article>
+</div>
+
+
+
+<div class="container">
+    <aside class="aside_propiedad" id="propiedad_aside">
+        <button class="btnAnterior" onclick="proyector('casa1','anterior')"><</button>
+        <button class="btnSiguiente" onclick="proyector('casa1','siguiente')">></button>
+    </aside>
+    <article class="article_propiedad">
+        <div class="contenedor_propiedad">
+            <div style="grid-area: titulo; font-size: 1.5rem; margin-bottom: 5px;" class="titulo_propiedad">
+                <b>Departamento</b>
+            </div>
+            <div style="grid-area: informacion; font-size: 1.2rem; color: #ffffff;"
+                class="informacion_propiedad">
+                <p>Hermoso departamento ubicado en la zona más centrica de guadalajara, cuenta con dos recamaras
+                    y un baño completo</p>
+            </div>
+            <div style="grid-area: ubicacion; font-size: 0.8rem; display: flex; align-items: center;"
+                class="ubicacion_propiedad">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor"
+                    class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                </svg>
+                <a style="color: #6fbae0;"
+                    href="https://goo.gl/maps/NCrZNFzMpv4yg8m39">https://goo.gl/maps/NCrZNFzMpv4yg8m39</a>
+            </div>
+            <div style="grid-area: precio; font-size: 2rem;" class="precio_propiedad">
+                <span>MX 6,000 - 7,000 </span>
+            </div>
+            <div style="grid-area: dimensiones; font-size: 1.2rem; color: #ffffff;"
+                class="dimensiones_propiedad">
+                <div class="dimensiones">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor"
+                        class="bi bi-house" viewBox="0 0 16 16">
+                        <path
+                            d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+                    </svg>
+                    <div style="margin-left: 5px;">2 rec. 1 baño</div>
+                </div>
+
+                <div class="dimensiones">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="28" fill="currentColor"
+                        class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z" />
+                    </svg>
+                    <span style="margin-left: 5px;">150m<sup>2</sup></span>
+                </div>
+            </div>
+            <div style="grid-area: caracteristicas; display: flex; align-items: center; "
+                class="caracteristicas_propiedad">
+                <span class="elementos_propiedad">Gimnasio</span>
+                <span class="elementos_propiedad">Alberca</span>
+                <span class="elementos_propiedad">Pet friendly</span>
+                <span class="elementos_propiedad">Terraza</span>
+            </div>
+            <div style="font-size: 0.7rem;" class="contacto_propiedad">
+                <span class="contacto">
+                    Para más info. contactar al <u>33129908567</u> o mandar correo a <a style="color: #ffffff;"
+                        href="mailto:liantori.inmobiliaria@gmail.com">liantori.inmobiliaria@gmail.com</a>
+                </span>
+            </div>
+        </div>
+    </article>
+</div>
+
+
+<div class="container">
+    <aside class="aside_propiedad" id="propiedad_aside">
+        <button class="btnAnterior" onclick="proyector('casa1','anterior')"><</button>
+        <button class="btnSiguiente" onclick="proyector('casa1','siguiente')">></button>
+    </aside>
+    <article class="article_propiedad">
+        <div class="contenedor_propiedad">
+            <div style="grid-area: titulo; font-size: 1.5rem; margin-bottom: 5px;" class="titulo_propiedad">
+                <b>Departamento</b>
+            </div>
+            <div style="grid-area: informacion; font-size: 1.2rem; color: #ffffff;"
+                class="informacion_propiedad">
+                <p>Hermoso departamento ubicado en la zona más centrica de guadalajara, cuenta con dos recamaras
+                    y un baño completo</p>
+            </div>
+            <div style="grid-area: ubicacion; font-size: 0.8rem; display: flex; align-items: center;"
+                class="ubicacion_propiedad">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor"
+                    class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                </svg>
+                <a style="color: #6fbae0;"
+                    href="https://goo.gl/maps/NCrZNFzMpv4yg8m39">https://goo.gl/maps/NCrZNFzMpv4yg8m39</a>
+            </div>
+            <div style="grid-area: precio; font-size: 2rem;" class="precio_propiedad">
+                <span>MX 6,000 - 7,000 </span>
+            </div>
+            <div style="grid-area: dimensiones; font-size: 1.2rem; color: #ffffff;"
+                class="dimensiones_propiedad">
+                <div class="dimensiones">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor"
+                        class="bi bi-house" viewBox="0 0 16 16">
+                        <path
+                            d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z" />
+                    </svg>
+                    <div style="margin-left: 5px;">2 rec. 1 baño</div>
+                </div>
+
+                <div class="dimensiones">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="28" fill="currentColor"
+                        class="bi bi-arrows-fullscreen" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707zm0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707zm-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707z" />
+                    </svg>
+                    <span style="margin-left: 5px;">150m<sup>2</sup></span>
+                </div>
+            </div>
+            <div style="grid-area: caracteristicas; display: flex; align-items: center; "
+                class="caracteristicas_propiedad">
+                <span class="elementos_propiedad">Gimnasio</span>
+                <span class="elementos_propiedad">Alberca</span>
+                <span class="elementos_propiedad">Pet friendly</span>
+                <span class="elementos_propiedad">Terraza</span>
+            </div>
+            <div style="font-size: 0.7rem;" class="contacto_propiedad">
+                <span class="contacto">
+                    Para más info. contactar al <u>33129908567</u> o mandar correo a <a style="color: #ffffff;"
+                        href="mailto:liantori.inmobiliaria@gmail.com">liantori.inmobiliaria@gmail.com</a>
+                </span>
+            </div>
+        </div>
+    </article>
 </div>

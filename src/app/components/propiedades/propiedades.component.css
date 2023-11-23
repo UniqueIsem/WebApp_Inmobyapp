@@ -5,11 +5,15 @@
     margin-top: 20px;
     display: flex;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    max-width: 90%;
+    max-height: 100%;
 }
 
 .btnAnterior {
     font-family: serif;
-    font-size: 1.87rem;
+    font-size: 3rem;
     float: left;
     width: 25%;
     height: 100%;
@@ -29,7 +33,7 @@
 
 .btnSiguiente {
     font-family: serif;
-    font-size: 1.87rem;
+    font-size: 3rem;
     float: right;
     width: 25%;
     height: 100%;
@@ -55,7 +59,7 @@
     border-radius: 10px;
     display: block;
     object-fit: cover;
-    width: 100%;
+    width: 80%;
     max-height: 300px;
     height: 100vh;
 }
@@ -95,4 +99,17 @@
     text-overflow: ellipsis;
     box-sizing: border-box;
     border: 1px solid rgb(255, 255, 255);
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        display: block;
+        padding: 10px;
+    }
+
+    .aside_propiedad {
+        width: 96%;
+        max-height: 300px;
+        height: 100vh;
+    }
 }
