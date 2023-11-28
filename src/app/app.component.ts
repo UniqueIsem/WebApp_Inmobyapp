@@ -37,9 +37,9 @@ export class AppComponent implements OnInit {
   logout(): void {
     const resultado = confirm('¿Estás seguro de que quieres salir de la sesion?');
     if (resultado) {
+      this.login = false;
       this.userService.clearUsuarioGlobal();
       this.verificarLogin();
-      this.login = false;
     } 
   }
 

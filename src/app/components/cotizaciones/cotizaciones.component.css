@@ -34,9 +34,8 @@
 }
 
 .submit-form {
-  padding: 20px;
-  margin-top: 20px;
   margin: auto;
+  width: 100vh;
 }
 
 .form-group {
@@ -44,9 +43,20 @@
   color: #ffff;
 }
 
+.form {
+  text-align: center;
+  width: 100%;
+}
+
+.input-forms {
+  display: flex;
+  width: 100vh;
+}
+
 .btn-container {
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .btn-save {
@@ -56,6 +66,7 @@
 .msgSuccess {
   align-items: center;
   justify-content: center;
+  margin: auto;
 }
 
 /*parte derecha*/

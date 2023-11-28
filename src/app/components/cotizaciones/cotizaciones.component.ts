@@ -18,6 +18,8 @@ export class CotizacionesComponent {
   aireSalud = "";
   calidadAire = "";
   cotizacionExitosa = false;
+  forms = true;
+  info = false;
 
   constructor(private tiendaService: TiendaService) { }
 
@@ -32,22 +34,30 @@ export class CotizacionesComponent {
     this.tienda = new Tienda();
   }
 
+  showInfo(): void {
+    this.forms = false;
+    this.info = true;
+  }
+
   calcularPrecio(): void {
+    this.cotizacionExitosa = true;
     const { domicilio, metros, pisos, cuartos, banios } = this.tienda;
-  
+    this.info = true;
+
     const precios: Precios = {
       guadalajara: 1000000,
       zapopan: 1200000,
       tlajomulco: 950000,
       tlaquepaque: 1100000,
       tonala: 900000,
+      oblatos: 900000,
       tesistan: 1050000,
       metrosCuadrados: 1500,
       porPiso: 50000,
       porCuarto: 75000,
       porBaño: 40000
     };
-  
+
     // Comprueba si las propiedades tienen valores antes de usarlas
     if (domicilio && metros && pisos && cuartos && banios) {
       const precioDomicilio = precios[domicilio.toLowerCase()] || 0;
@@ -55,7 +65,7 @@ export class CotizacionesComponent {
       const precioPisos = parseInt(pisos.toString(), 10) || 0;
       const precioCuartos = parseInt(cuartos.toString(), 10) || 0;
       const precioBanios = parseInt(banios.toString(), 10) || 0;
-  
+
       this.precioPropiedad =
         precioDomicilio +
         precioMetros * precios['metrosCuadrados'] +
@@ -63,19 +73,30 @@ export class CotizacionesComponent {
         precioCuartos * precios['porCuarto'] +
         precioBanios * precios['porBaño'];
 
-        this.cotizacionExitosa = true;
-
       // No se llama a saveTienda() aquí para evitar cambiar submitted a true
     } else {
       console.error('Algunas propiedades no tienen valores definidos.');
     }
 
-    switch(domicilio) {
-      case "miravalle": this.aireSalud = "MEDIA"
-      break;
-      case "guadalajara": this.aireSalud = "MEDIA"
-      break;
+    switch (domicilio) {
+      case "miravalle" || "zapopan" || "tlaquepaque":
+        this.aireSalud = "MALA"
+        this.calidadAire = "MALA";
+        break;
+      case "guadalajara" || "tonala ":
+        this.aireSalud = "ACEPTABLE";
+        this.calidadAire = "ACEPTABLE"
+        break;
+      default:
+        this.aireSalud = "BUENA";
+        this.calidadAire = "BUENA";
     }
 
+  }
+
+  regresar() {
+    this.submitted = false;
+    this.forms = true;
+    this.info = false;
   }
 }

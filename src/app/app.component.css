@@ -7,7 +7,6 @@
 }
 
 a {
-  
   color: #ffffff;
 }
 
@@ -59,6 +58,7 @@ a {
   display: inline-block;
   width: 50px;
   height: 50px;
+  margin-left: 10px;
   text-align: center;
   text-decoration: none;
   font-size: 10px;
@@ -68,7 +68,10 @@ a {
   color: #fff;
 }
 
-.loginConfirmation {
+.container-logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #ffffff;
 }
 
