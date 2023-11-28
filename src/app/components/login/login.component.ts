@@ -34,7 +34,7 @@ export class LoginComponent {
       } else {
         // Nombre de usuario o contraseña incorrectos, mostrar mensaje de error o manejarlo como desees
         this.usuarioService.loginConfirmation(false);
-        this.errorMessage = 'Usuario o contraseña incorrectos';
+        this.errorMessage = 'Usuario o contraseña inc orrectos';
       }
     });
   }

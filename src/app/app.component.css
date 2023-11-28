@@ -99,3 +99,49 @@ footer {
   margin-top: 0.62rem;
   margin-right: 1.8rem;
 }
+
+
+@media screen and (max-width: 1200px) {
+  .navbar-brand {
+    font-size: 17px;
+  }
+  
+  .navbar .nav-item {
+    font-size: 15px;
+    margin-right: 12px;
+  }
+
+  .btnLogin button {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-brand {
+    font-size: 15px;
+  }
+  
+  .navbar .nav-item {
+    font-size: 13px;
+    margin-right: 10px;
+  }
+
+  .btnLogin button {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar-brand {
+    font-size: 14px;
+  }
+  
+  .navbar .nav-item {
+    font-size: 12px;
+    margin-right: 9px;
+  }
+
+  .btnLogin button {
+    font-size: 9px;
+  }
+}
