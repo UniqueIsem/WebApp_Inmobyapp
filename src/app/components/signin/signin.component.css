@@ -21,3 +21,7 @@
     color: red;
     margin-bottom: 10px;
 }
+
+.msgSuccess h4 {
+    font-size: 50px;
+}
