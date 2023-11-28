@@ -28,13 +28,13 @@
         <input class="form-control" id="banios" required [(ngModel)]="tienda.banios" name="baños" />
       </div>
       <div class="btn-container">
-        <button (click)="saveTienda()" class="btn btn-success btn-save">Guardar propiedad</button>
+        <button (click)="saveTienda()" class="btn btn-success btn-save">Subir propiedad</button>
       </div>
     </div>
 
     <div *ngIf="submitted" class="msgSuccess">
       <h4>La solicitud de la propiedad se subió exitosamente</h4>
-      <button class="btn btn-success" (click)="newTienda()">Agregar</button>
+      <button (click)="calcularPrecio()" class="btn btn-success btn-save">Cotizar propiedad</button>
     </div>
   </div>
 
@@ -42,8 +42,8 @@
 
 
     <div class="precio-container">
-      <h4>El precio de tu propiedad seria:</h4>
-      <h2>$$$$$$$$$$$$</h2>
+      <h4>El precio de tu propiedad sería:</h4>
+      <h2>{{ precioPropiedad | currency:'MXN':'symbol':'1.0-0' }}</h2>
     </div>
 
     <div class="agent-container">
