@@ -1,70 +1,53 @@
 <div class="container">
-  <div class="container-cotizaciones">
-    <div class="submit-form">
-      <div class="text-center " *ngIf="!submitted">
-        <div class="form-group">
-          <label for="title">Titulo</label>
-          <input type="text" class="form-control" id="title" required [(ngModel)]="tienda.title" name="title" />
-        </div>
-
-        <div class="form-group">
-          <label for="description">Descripcion</label>
-          <input class="form-control" id="description" required [(ngModel)]="tienda.description" name="description" />
-        </div>
-        <div class="form-group">
-          <label for="domicilio">Domicilio</label>
-          <input class="form-control" id="domicilio" required [(ngModel)]="tienda.domicilio" name="domicilio" />
-        </div>
-        <div class="form-group">
-          <label for="pisos">Pisos</label>
-          <input class="form-control" id="pisos" required [(ngModel)]="tienda.pisos" name="pisos" />
-        </div>
-        <div class="form-group">
-          <label for="cuartos">Cuartos</label>
-          <input class="form-control" id="cuartos" required [(ngModel)]="tienda.cuartos" name="cuartos" />
-        </div>
-        <div class="form-group">
-          <label for="banios">Banios</label>
-          <input class="form-control" id="banios" required [(ngModel)]="tienda.banios" name="baños" />
-        </div>
-        <div class="btn-container">
-          <button (click)="saveTienda()" class="btn btn-success btn-save">Guardar propiedad</button>
-        </div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="title">Titulo</label>
+        <input type="text" class="form-control" id="title" required [(ngModel)]="tienda.title" name="title" />
       </div>
 
-      <div *ngIf="submitted" class="msgSuccess">
-        <h4>La solicitud de la propiedad se subió exitosamente</h4>
-        <button class="btn btn-success" (click)="newTienda()">Agregar</button>
+      <div class="form-group">
+        <label for="description">Descripcion</label>
+        <input class="form-control" id="description" required [(ngModel)]="tienda.metros" name="description" />
+      </div>
+      <div class="form-group">
+        <label for="domicilio">Domicilio</label>
+        <input class="form-control" id="domicilio" required [(ngModel)]="tienda.domicilio" name="domicilio" />
+      </div>
+      <div class="form-group">
+        <label for="pisos">Pisos</label>
+        <input class="form-control" id="pisos" required [(ngModel)]="tienda.pisos" name="pisos" />
+      </div>
+      <div class="form-group">
+        <label for="cuartos">Cuartos</label>
+        <input class="form-control" id="cuartos" required [(ngModel)]="tienda.cuartos" name="cuartos" />
+      </div>
+      <div class="form-group">
+        <label for="banios">Banios</label>
+        <input class="form-control" id="banios" required [(ngModel)]="tienda.banios" name="baños" />
+      </div>
+      <div class="btn-container">
+        <button (click)="saveTienda()" class="btn btn-success btn-save">Guardar propiedad</button>
       </div>
     </div>
 
-    <div class="cotizacion-container">
-      <div class="precio-container">
-        <h4>El precio de tu propiedad seria:</h4>
-        <h2>$$$$$$$$$$$$</h2>
-      </div>
-
-      <div class="agent-container">
-        <p>Contacta a un vendedor</p>
-        <a href="mailto:agentedeventas@gmail.com">agentedeventas@gmail.com</a>
-      </div>
+    <div *ngIf="submitted" class="msgSuccess">
+      <h4>La solicitud de la propiedad se subió exitosamente</h4>
+      <button class="btn btn-success" (click)="newTienda()">Agregar</button>
     </div>
   </div>
 
-  <div class="text-center">
-    <img src="https://aire.jalisco.gob.mx/Imagenes/galeria/Escala2022.png" alt="">
-  </div>
-  <div class="container-aire">
-    <div class="container-nubes">
-      <h5 class="text-center">Indice AIRE & SALUD</h5>
-      <iframe class="calidadAire" src="https://aire.jalisco.gob.mx/mapag17/mapag2021N.aspx" width="100%" height="400px"
-        frameborder="0" scrolling="no"></iframe>
-    </div>
-    <div class="container-calidad">
-      <h5 class="text-center">Indice IMECA</h5>
-      <iframe class="calidadAire" src="https://aire.jalisco.gob.mx/mapag17/mapag2021c.aspx" width="100%" height="400px"
-        frameborder="0" scrolling="no"></iframe>
-    </div>
-  </div>
+  <div class="cotizacion-container">
 
+
+    <div class="precio-container">
+      <h4>El precio de tu propiedad seria:</h4>
+      <h2>$$$$$$$$$$$$</h2>
+    </div>
+
+    <div class="agent-container">
+      <p>Contacta a un vendedor</p>
+      <a href="mailto:agentedeventas@gmail.com">agentedeventas@gmail.com</a>
+    </div>
+  </div>
 </div>

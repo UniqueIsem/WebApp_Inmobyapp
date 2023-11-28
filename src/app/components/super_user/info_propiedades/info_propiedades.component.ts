@@ -12,11 +12,11 @@ export class InfoPropiedadesComponent implements OnInit {
   @Output() refreshList: EventEmitter<any> = new EventEmitter();
   currentTienda: Tienda = {
     title: '',
-    description: '',
+    metros: 0,
     domicilio: '',
-    pisos: '',
-    cuartos: '',
-    banios: '',
+    pisos: 0,
+    cuartos: 0,
+    banios: 0,
 
     published: false
   };
@@ -47,7 +47,7 @@ export class InfoPropiedadesComponent implements OnInit {
   updateTutorial(): void {
     const data = {
       title: this.currentTienda.title,
-      description: this.currentTienda.description
+      metros: this.currentTienda.metros
     };
 
     if (this.currentTienda.key) {
