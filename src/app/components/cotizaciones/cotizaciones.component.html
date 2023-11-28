@@ -1,54 +1,76 @@
 <div class="container">
-  <div class="submit-form">
-    <div *ngIf="!submitted">
-      <div class="form-group">
-        <label for="title">Titulo</label>
-        <input type="text" class="form-control" id="title" required [(ngModel)]="tienda.title" name="title" />
-      </div>
-      <div class="form-group">
-        <label for="domicilio">Domicilio</label>
-        <input class="form-control" id="domicilio" required [(ngModel)]="tienda.domicilio" name="domicilio" />
+  <div class="container-cotizaciones">
+    <div class="submit-form">
+      <div class="text-center" *ngIf="!submitted">
+        <div class="form-group">
+          <label for="title">Tipo</label>
+          <input type="text" class="form-control" id="title" required [(ngModel)]="tienda.title" name="title" />
+        </div>
+        <div class="form-group">
+          <label for="domicilio">Municipio</label>
+          <input class="form-control" id="domicilio" required [(ngModel)]="tienda.domicilio" name="domicilio" />
+        </div>
+
+        <div class="form-group">
+          <label for="metros">Metros</label>
+          <input class="form-control" id="metros" required [(ngModel)]="tienda.metros" name="metros" />
+        </div>
+
+        <div class="form-group">
+          <label for="pisos">Pisos</label>
+          <input class="form-control" id="pisos" required [(ngModel)]="tienda.pisos" name="pisos" />
+        </div>
+        <div class="form-group">
+          <label for="cuartos">Cuartos</label>
+          <input class="form-control" id="cuartos" required [(ngModel)]="tienda.cuartos" name="cuartos" />
+        </div>
+        <div class="form-group">
+          <label for="banios">Baños</label>
+          <input class="form-control" id="banios" required [(ngModel)]="tienda.banios" name="baños" />
+        </div>
+        <div class="btn-container">
+          <button (click)="saveTienda()" class="btn btn-success btn-save">Subir propiedad</button>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="metros">Metros</label>
-        <input class="form-control" id="metros" required [(ngModel)]="tienda.metros" name="metros" />
-      </div>
-
-      <div class="form-group">
-        <label for="pisos">Pisos</label>
-        <input class="form-control" id="pisos" required [(ngModel)]="tienda.pisos" name="pisos" />
-      </div>
-      <div class="form-group">
-        <label for="cuartos">Cuartos</label>
-        <input class="form-control" id="cuartos" required [(ngModel)]="tienda.cuartos" name="cuartos" />
-      </div>
-      <div class="form-group">
-        <label for="banios">Banios</label>
-        <input class="form-control" id="banios" required [(ngModel)]="tienda.banios" name="baños" />
-      </div>
-      <div class="btn-container">
-        <button (click)="saveTienda()" class="btn btn-success btn-save">Subir propiedad</button>
+      <div *ngIf="submitted" class="msgSuccess text-center">
+        <h4>La solicitud de la propiedad se subió exitosamente</h4>
+        <button *ngIf="!cotizacionExitosa" (click)="calcularPrecio()" class="btn btn-success btn-save">Cotizar propiedad</button>
+        <button *ngIf="cotizacionExitosa" routerLink="cotizaciones" class="btn btn-success btn-save">Regresar</button>
       </div>
     </div>
 
-    <div *ngIf="submitted" class="msgSuccess">
-      <h4>La solicitud de la propiedad se subió exitosamente</h4>
-      <button (click)="calcularPrecio()" class="btn btn-success btn-save">Cotizar propiedad</button>
+
+    <div class="cotizacion-container">
+      <div class="precio-container">
+        <h4>El precio de tu propiedad sería:</h4>
+        <h2>{{ precioPropiedad | currency:'MXN':'symbol':'1.0-0' }}</h2>
+        <h4>Indice de AIRE Y SALUD</h4>
+        <h2> {{ aireSalud }}</h2>
+        <h4>Indice de Calidad del Arire AMG</h4>
+        <h2> {{ calidadAire }}</h2>
+      </div>
+
+      <div class="agent-container">
+        <p>Contacta a un vendedor</p>
+        <a href="mailto:agentedeventas@gmail.com">agentedeventas@gmail.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="container-calidad-img">
+    <img class="calidad-img" src="https://aire.jalisco.gob.mx/Imagenes/galeria/Escala2022.png">
+  </div>
+  <div class="container-aire">
+    <div class="container-nubes">
+      <h5 class="text-center">Indice AIRE & SALUD</h5>
+      <iframe class="calidadAire" src="https://aire.jalisco.gob.mx/mapag17/mapag2021N.aspx" width="100%" height="400px"
+        frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div class="container-calidad">
+      <h5 class="text-center">Indice IMECA</h5>
+      <iframe class="calidadAire" src="https://aire.jalisco.gob.mx/mapag17/mapag2021c.aspx" width="100%" height="400px"
+        frameborder="0" scrolling="no"></iframe>
     </div>
   </div>
 
-  <div class="cotizacion-container">
-
-
-    <div class="precio-container">
-      <h4>El precio de tu propiedad sería:</h4>
-      <h2>{{ precioPropiedad | currency:'MXN':'symbol':'1.0-0' }}</h2>
-    </div>
-
-    <div class="agent-container">
-      <p>Contacta a un vendedor</p>
-      <a href="mailto:agentedeventas@gmail.com">agentedeventas@gmail.com</a>
-    </div>
-  </div>
 </div>

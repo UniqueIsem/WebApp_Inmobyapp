@@ -15,6 +15,9 @@ export class CotizacionesComponent {
   tienda: Tienda = new Tienda();
   submitted = false;
   precioPropiedad = 0;
+  aireSalud = "";
+  calidadAire = "";
+  cotizacionExitosa = false;
 
   constructor(private tiendaService: TiendaService) { }
 
@@ -42,7 +45,7 @@ export class CotizacionesComponent {
       metrosCuadrados: 1500,
       porPiso: 50000,
       porCuarto: 75000,
-      porBano: 40000
+      porBaño: 40000
     };
   
     // Comprueba si las propiedades tienen valores antes de usarlas
@@ -58,11 +61,21 @@ export class CotizacionesComponent {
         precioMetros * precios['metrosCuadrados'] +
         precioPisos * precios['porPiso'] +
         precioCuartos * precios['porCuarto'] +
-        precioBanios * precios['porBano'];
-  
+        precioBanios * precios['porBaño'];
+
+        this.cotizacionExitosa = true;
+
       // No se llama a saveTienda() aquí para evitar cambiar submitted a true
     } else {
       console.error('Algunas propiedades no tienen valores definidos.');
     }
+
+    switch(domicilio) {
+      case "miravalle": this.aireSalud = "MEDIA"
+      break;
+      case "guadalajara": this.aireSalud = "MEDIA"
+      break;
+    }
+
   }
 }

@@ -28,14 +28,15 @@
       <button routerLink="login" class="btn btn-danger">Log In</button>
       <button routerLink="signup" class="btn btn-danger">Sign Up</button>
     </div>
-
-    <button *ngIf="!mostrarBtns" class="btnLogout" (click)="logout()">Log out</button>
+    <div class="text-center">
+      <div *ngIf="login" class="loginConfirmation">
+         {{ usuarioGlobal }}
+      </div>
+      <button *ngIf="!mostrarBtns" class="btnLogout" (click)="logout()">Log out</button>
+    </div>
 
   </nav>
 
-  <div *ngIf="login" class="loginConfirmation">
-    <h1>BIENVENIDO {{ usuarioGlobal }}</h1>
-  </div>
 
   <router-outlet></router-outlet>
 
