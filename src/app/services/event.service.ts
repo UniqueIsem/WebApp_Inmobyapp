@@ -11,4 +11,9 @@ export class EventService {
   emitLoginChanged(login: boolean) {
     this.loginChangedSubject.next(login);
   }
+
+  emitSuperChanged(superlogin: boolean) {
+    this.loginChangedSubject.next(superlogin)
+  }
+
 }

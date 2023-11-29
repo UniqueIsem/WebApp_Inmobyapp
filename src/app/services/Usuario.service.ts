@@ -15,6 +15,7 @@ export class UsuarioService {
   afAuth: any;
   usuarioGlobal: string ="";
   login: boolean = false
+  superlogin: boolean = false;
 
   constructor(
     private db: AngularFireDatabase,
@@ -79,5 +80,12 @@ export class UsuarioService {
       return false;
     }
   }
+
+  superLoginConfirmation(superlogin: boolean) {
+    if (superlogin === true) {
+      this.eventService.emitSuperChanged(superlogin);
+    }
+  }
+
 
 }

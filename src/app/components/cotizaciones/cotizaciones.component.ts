@@ -1,3 +1,4 @@
+//cotizaciones.component.ts
 import { Component } from '@angular/core';
 import { Tienda } from 'src/app/models/Tienda.model';
 import { TiendaService } from 'src/app/services/Tienda.service';
@@ -15,17 +16,19 @@ export class CotizacionesComponent {
   tienda: Tienda = new Tienda();
   submitted = false;
   precioPropiedad = 0;
-  aireSalud = "";
-  calidadAire = "";
+  aireSalud = '';
+  calidadAire = '';
   cotizacionExitosa = false;
   forms = true;
   info = false;
 
-  constructor(private tiendaService: TiendaService) { }
+  constructor(private tiendaService: TiendaService) {}
 
   saveTienda(): void {
+    this.tienda.precio = this.precioPropiedad; // Guardar el precio calculado en la propiedad
     this.tiendaService.create(this.tienda).then(() => {
       this.submitted = true;
+      // Aquí puedes realizar cualquier otra acción después de guardar la propiedad, si es necesario
     });
   }
 
@@ -58,7 +61,6 @@ export class CotizacionesComponent {
       porBaño: 40000
     };
 
-    // Comprueba si las propiedades tienen valores antes de usarlas
     if (domicilio && metros && pisos && cuartos && banios) {
       const precioDomicilio = precios[domicilio.toLowerCase()] || 0;
       const precioMetros = parseInt(metros.toString(), 10) || 0;
@@ -73,25 +75,27 @@ export class CotizacionesComponent {
         precioCuartos * precios['porCuarto'] +
         precioBanios * precios['porBaño'];
 
-      // No se llama a saveTienda() aquí para evitar cambiar submitted a true
+      // Realizar la operación de guardar la propiedad después de calcular el precio
+      this.saveTienda();
     } else {
       console.error('Algunas propiedades no tienen valores definidos.');
     }
 
     switch (domicilio) {
-      case "miravalle" || "zapopan" || "tlaquepaque":
-        this.aireSalud = "MALA"
-        this.calidadAire = "MALA";
+      case 'miravalle':
+      case 'tlaquepaque':
+        this.aireSalud = 'MALA';
+        this.calidadAire = 'MALA';
         break;
-      case "guadalajara" || "tonala ":
-        this.aireSalud = "ACEPTABLE";
-        this.calidadAire = "ACEPTABLE"
+      case 'guadalajara':
+      case 'tonala':
+        this.aireSalud = 'ACEPTABLE';
+        this.calidadAire = 'ACEPTABLE';
         break;
       default:
-        this.aireSalud = "BUENA";
-        this.calidadAire = "BUENA";
+        this.aireSalud = 'BUENA';
+        this.calidadAire = 'BUENA';
     }
-
   }
 
   regresar() {

@@ -17,11 +17,11 @@
         <a routerLink="cotizaciones" class="nav-link">Cotiza</a>
       </li>
       <li class="nav-item">
-        <a routerLink="super" class="nav-link">SuperUser</a>
+        <a routerLink="super"  class="nav-link">SuperUser</a>
         <!--se agrega mientras trabajamos en el-->
       </li>
       <li class="nav-item">
-        <a routerLink="signup_super" class="nav-link">SignSuper</a>
+        <a routerLink="signup_super"  class="nav-link">SignSuper</a>
       </li>
     </ul>
     <div *ngIf="mostrarBtns" class="btnLogin">
@@ -32,7 +32,7 @@
       <div *ngIf="login" class="loginConfirmation">
          {{ usuarioGlobal }}
       </div>
-      <button *ngIf="!mostrarBtns" class="btnLogout" (click)="logout()">Log out</button>
+      <button *ngIf="!mostrarBtns" class="btnLogout" routerLink="home" (click)="logout()">Log out</button>
     </div>
 
   </nav>

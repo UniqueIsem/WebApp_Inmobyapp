@@ -6,6 +6,7 @@ export class Tienda {
     pisos?: number = 0;
     cuartos?: number = 0;
     banios?: number = 0;
+    precio?: number = 0;
     published?: boolean;
   }
   export class usuario{
