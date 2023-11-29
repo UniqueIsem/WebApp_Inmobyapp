@@ -35,14 +35,14 @@
       </div>
 
       <div class="btn-container">
-        <button (click)="saveTienda()" class="btn btn-success btn-save">Subir propiedad</button>
+        <button *ngIf="!cotizacionExitosa" (click)="calcularPrecio()" class="btn btn-success btn-save">Cotizar
+          propiedad</button>
       </div>
     </div>
 
-    <div *ngIf="submitted" class="msgSuccess">
-      <h4>La solicitud de la propiedad se subió exitosamente</h4>
-      <button *ngIf="!cotizacionExitosa" (click)="calcularPrecio()" class="btn btn-success btn-save">Cotizar
-        propiedad</button>
+    <div *ngIf="submitted" class="msgSuccess">     
+        <button (click)="saveTienda()" class="btn btn-success btn-save">Subir propiedad</button>
+        <h4>La solicitud de la propiedad se subió exitosamente</h4>
       <button *ngIf="cotizacionExitosa" (click)="regresar()" class="btn btn-success btn-save">Regresar</button>
     </div>
 

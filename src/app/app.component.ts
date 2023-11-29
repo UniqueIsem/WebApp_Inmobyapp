@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   usuarioGlobal: string = '';
   login: boolean = false;
   mostrarBtns: boolean = true;
+  loginsup: boolean = false;
 
   constructor(private userService: UsuarioService, private eventService: EventService) { }
 
@@ -44,6 +45,10 @@ export class AppComponent implements OnInit {
       this.userService.clearUsuarioGlobal();
       this.verificarLogin();
     } 
+  }
+
+  loginsuper(): void {
+    this.loginsup = true;
   }
 
 }
