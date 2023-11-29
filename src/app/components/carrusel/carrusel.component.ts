@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carrusel.component.css']
 })
 export class CarruselComponent implements OnInit {
-  imagenes: string[] = [
+  imagenes: string[] = [ //declaracion de imagenes para el carrusel
     'https://images.unsplash.com/photo-1512699355324-f07e3106dae5?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     'https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
@@ -15,10 +15,12 @@ export class CarruselComponent implements OnInit {
 
   indiceActual = 0;
 
+  //manda a llamar el metodo cambiarImagen al inicar el componente
   ngOnInit() {
     this.cambiarImagen();
   }
 
+  //logica para cambiar la imagen del componente en un cierto tiempo
   cambiarImagen() {
     setInterval(() => {
       this.indiceActual = (this.indiceActual + 1) % this.imagenes.length;

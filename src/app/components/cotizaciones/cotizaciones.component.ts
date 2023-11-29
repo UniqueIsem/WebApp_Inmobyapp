@@ -11,7 +11,7 @@ interface Precios {
   templateUrl: './cotizaciones.component.html',
   styleUrls: ['./cotizaciones.component.css']
 })
-export class CotizacionesComponent {
+export class CotizacionesComponent { //declaraciond de variables necesarias
   tienda: Tienda = new Tienda();
   submitted = false;
   precioPropiedad = 0;
@@ -23,28 +23,32 @@ export class CotizacionesComponent {
 
   constructor(private tiendaService: TiendaService) { }
 
+  //crea una tienda en la bd y cambia la variable para que aparezca el html con *ngIf="!subbmited"
   saveTienda(): void {
     this.tiendaService.create(this.tienda).then(() => {
       this.submitted = true;
     });
   }
 
+  //crea una nueva instancia de la propiedad
   newTienda(): void {
     this.submitted = false;
     this.tienda = new Tienda();
   }
 
+  //cambia las variables para que desaparezcan los input fields y muestre la informacion 
   showInfo(): void {
     this.forms = false;
     this.info = true;
   }
 
+  //cotiza el precio de la propiedad segun la informacion ingresada
   calcularPrecio(): void {
     this.cotizacionExitosa = true;
     const { domicilio, metros, pisos, cuartos, banios } = this.tienda;
     this.info = true;
 
-    const precios: Precios = {
+    const precios: Precios = { //declaracion base de precios por municipio
       guadalajara: 1000000,
       zapopan: 1200000,
       tlajomulco: 950000,
@@ -78,7 +82,7 @@ export class CotizacionesComponent {
       console.error('Algunas propiedades no tienen valores definidos.');
     }
 
-    switch (domicilio) {
+    switch (domicilio) { 
       case "miravalle" || "zapopan" || "tlaquepaque":
         this.aireSalud = "MALA"
         this.calidadAire = "MALA";
@@ -94,9 +98,9 @@ export class CotizacionesComponent {
 
   }
 
-  regresar() {
+  regresar() { //deja de mostrar la informacion y regresa a los input fields
     this.submitted = false;
     this.forms = true;
-    this.info = false;
+    this.info = false;    
   }
 }

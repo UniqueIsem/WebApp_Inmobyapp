@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
   templateUrl: './signup-super.component.html',
   styleUrls: ['./signup-super.component.css']
 })
-export class SignupSuperComponent {
+export class SignupSuperComponent { //declaracion de las variables necesarias
   User: usuario = new usuario();
   submitted = false;
   passwordsMatch = true;
@@ -24,14 +24,15 @@ export class SignupSuperComponent {
     confirmNewPassword: new FormControl('', Validators.required)
   })
 
+  //guardar el nombre de ususario y verificacion de campos en login form
   saveUsuario(): void {
-    // Verificar si las contraseñas coinciden y si el usuario ya existe
+    //Verifica si las contraseñas coinciden y si el usuario ya existe
     if (this.User.contrasena === this.User.confirmNewPassword) {
       this.passwordsMatch = true;
   
-      const username = this.User.usuario; // Almacenar el nombre de usuario
+      const username = this.User.usuario; //Almacenar el nombre de usuario en el service Usuario
   
-      if (username) {
+      if (username) { //si la variable username no es null
         this.userEmpty = false;
         this.usuarioService.getUserByUsername(username).subscribe((data: any[]) => {
           if (data && data.length > 0) {
@@ -46,25 +47,25 @@ export class SignupSuperComponent {
             });
           }
         });
-      } else {
-        // Manejar el caso cuando el nombre de usuario es indefinido
+      } else { // Manejar el caso cuando el nombre de usuario es indefinido
         console.error('El nombre de usuario no puede ser indefinido');
         this.userEmpty = true;
       }
-    } else {
-      // Las contraseñas no coinciden
+    } else { // Las contraseñas no coinciden
       console.error("La contraseña no coincide")
       this.passwordsMatch = false;
     }
   }
-
-  newUsuario(): void {
+  
+  //cambia el valor de las variables y crea un usuario en la bd 
+  newUsuario(): void { //
     this.submitted = false;
     this.passwordsMatch = true;
     this.userExists = false;
     this.User = new usuario();
   }
 
+  //se manda a llamar al hacer submit del login form
   onSubmit(event: Event): void {
     event.preventDefault();
     this.saveUsuario();

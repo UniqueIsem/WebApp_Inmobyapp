@@ -16,14 +16,16 @@ export class AppComponent implements OnInit {
 
   constructor(private userService: UsuarioService, private eventService: EventService) { }
 
-  ngOnInit() {
+  //funcion que se llama sola al iniciar el componente, modifica el nav bar si el login está activo
+  ngOnInit() { 
     this.eventService.loginChanged$.subscribe((login) => {
       this.login = login;
       this.verificarLogin();
     });
   }
 
-  verificarLogin(): void {
+  //si detecta un login exitoso, cambia los btns de login y signup por el logout
+  verificarLogin(): void { 
     if (this.login) {
       this.usuarioGlobal = this.userService.getUsurioGlobal();
       this.login = true;
@@ -34,6 +36,7 @@ export class AppComponent implements OnInit {
     }
   }
 
+  //se llama en btnLogout y confirma el logout del usuario
   logout(): void {
     const resultado = confirm('¿Estás seguro de que quieres salir de la sesion?');
     if (resultado) {

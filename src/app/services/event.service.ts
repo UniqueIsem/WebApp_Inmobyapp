@@ -8,6 +8,7 @@ export class EventService {
   private loginChangedSubject = new Subject<boolean>();
   loginChanged$ = this.loginChangedSubject.asObservable();
 
+  //cambia el valor del flag que detecta si hay un susuario logeado
   emitLoginChanged(login: boolean) {
     this.loginChangedSubject.next(login);
   }

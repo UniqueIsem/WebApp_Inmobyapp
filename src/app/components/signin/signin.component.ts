@@ -9,7 +9,7 @@ import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css']
 })
-export class SigninComponent {
+export class SigninComponent { //declaracion de las variables necesarias
   User: usuario = new usuario();
   submitted = false;
   passwordsMatch = true;
@@ -18,12 +18,13 @@ export class SigninComponent {
 
   constructor(private usuarioService: UsuarioService) { }
 
-  signupForm = new FormGroup({
+  signupForm = new FormGroup({ //valores del sign up form
     usuario: new FormControl('', Validators.required),
     newPassword: new FormControl('', Validators.required),
     confirmNewPassword: new FormControl('', Validators.required)
   })
 
+  //agrega un usuario a la base de datos
   saveUsuario(): void {
     // Verificar si las contraseñas coinciden y si el usuario ya existe
     if (this.User.contrasena === this.User.confirmNewPassword) {
@@ -31,14 +32,12 @@ export class SigninComponent {
   
       const username = this.User.usuario; // Almacenar el nombre de usuario
   
-      if (username) {
+      if (username) { //si la variable username no esta vacia
         this.userEmpty = false;
         this.usuarioService.getUserByUsername(username).subscribe((data: any[]) => {
-          if (data && data.length > 0) {
-            // El usuario ya existe
+          if (data && data.length > 0) { // El usuario ya existe
             this.userExists = true;
-          } else {
-            // El usuario no existe, crearlo
+          } else { // El usuario no existe, asi que se crea
             this.userExists = false;
             this.User.su = false;
             this.usuarioService.create(this.User).then(() => {
@@ -46,18 +45,17 @@ export class SigninComponent {
             });
           }
         });
-      } else {
-        // Manejar el caso cuando el nombre de usuario es indefinido
+      } else { // Manejar el caso cuando el nombre de usuario es indefinido
         console.error('El nombre de usuario no puede ser indefinido');
         this.userEmpty = true;
       }
-    } else {
-      // Las contraseñas no coinciden
+    } else { // Las contraseñas no coinciden
       console.error("La contraseña no coincide")
       this.passwordsMatch = false;
     }
   }
 
+  //cambia las variables de confirmacion de los campos y crea un nuevo usuario
   newUsuario(): void {
     this.submitted = false;
     this.passwordsMatch = true;
@@ -65,6 +63,7 @@ export class SigninComponent {
     this.User = new usuario();
   }
 
+  //manda a llamar la funcion saveUsuario al llamar el evento onSubmit del form
   onSubmit(event: Event): void {
     event.preventDefault();
     this.saveUsuario();

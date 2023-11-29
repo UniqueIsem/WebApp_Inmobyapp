@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class NosotrosComponent {
 
+  //Home page no requiere logica o procesamiento de info
+
 }

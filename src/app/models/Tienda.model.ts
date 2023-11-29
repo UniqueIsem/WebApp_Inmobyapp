@@ -1,4 +1,4 @@
-export class Tienda {
+export class Tienda { //valores de las propiedades en la bd
     key?: string | null;
     title?: string;
     metros?: number = 0;
@@ -8,7 +8,7 @@ export class Tienda {
     banios?: number = 0;
     published?: boolean;
   }
-  export class usuario{
+  export class usuario{ //valores del usuario y super usuario en la bd
 
     key?: string | null;
     usuario?: string;

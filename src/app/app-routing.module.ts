@@ -9,6 +9,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { PropiedadesComponent } from './components/propiedades/propiedades.component';
 import { SignupSuperComponent } from './components/super_user/signup-super/signup-super.component';
 
+//definimos los nombres de las rutas hacia los componentes
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'super', component: ListaPropiedadesComponent },

@@ -9,7 +9,7 @@ import { EventService } from './event.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
+export class UsuarioService { //declaracion de variables necesarias
   private dbPath = '/Usuarios';
   usuariosRef: AngularFireList<usuario>;
   afAuth: any;
@@ -23,25 +23,33 @@ export class UsuarioService {
     this.usuariosRef = db.list(this.dbPath);
   }
 
-  getAll(): AngularFireList<usuario> {
+  //obtenemos una lista de todos los usuarios registrados
+  getAll(): AngularFireList<usuario> { 
     return this.usuariosRef;
   }
 
+  //crea un usuario y lo manda a la bd
   create(tienda: usuario): any {
     return this.usuariosRef.push(tienda);
   }
 
+  //modifica el valor del ususario especificado
   update(key: string, value: any): Promise<void> {
     return this.usuariosRef.update(key, value);
   }
 
+  //elimina un usuario asignado
   delete(key: string): Promise<void> {
     return this.usuariosRef.remove(key);
   }
 
+
+  //elimina a todos los usuarios
   deleteAll(): Promise<void> {
     return this.usuariosRef.remove();
   }
+
+  //retorna el usuario buscandolo con el nombre de usuario
   getUserByUsername(username: string): Observable<any[]> {
     return this.db.list('/Usuarios', ref => ref.orderByChild('usuario').equalTo(username)).valueChanges();
   }
